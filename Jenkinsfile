@@ -14,7 +14,7 @@ pipeline{
 
             steps{
 
-                sh "docker build . -t helloimage: ${DOCKER_TAG}"
+                sh "docker build . -t rajasekhar11022/helloimage:${DOCKER_TAG}"
             }
         }
     }
@@ -26,7 +26,7 @@ pipeline{
 
 def getDockerTag(){
 
-    def tag = sh script: 'git rev-parse HEAD', returnStdout: true
+    def tag = sh script:'git rev-parse HEAD', returnStdout: true
 
     return tag
 }
