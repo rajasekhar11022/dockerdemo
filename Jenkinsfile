@@ -17,6 +17,20 @@ pipeline{
                 sh "docker build . -t rajasekhar11022/helloimage:${DOCKER_TAG}"
             }
         }
+
+        stage('DockerHub Push'){
+
+            steps{
+
+                withCredentials([string(credentialsId: 'docker-hub', variable: 'dockerHubPwd')]) {
+
+                    sh "docker login -u rajasekhar11022 -p ${dockerHubPwd}"
+
+                    sh "docker push rajasekhar11022/helloimage:${DOCKER_TAG}"
+                }
+            }
+        }
+
     }
 
 
