@@ -14,7 +14,7 @@ pipeline{
 
             steps{
 
-                sh "docker build . -t rajasekhar11022/helloimage: ${DOCKER_TAG}"
+                sh "docker build . -t helloimage: ${DOCKER_TAG}"
             }
         }
     }
