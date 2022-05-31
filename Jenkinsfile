@@ -26,7 +26,7 @@ pipeline{
 
                     sh "docker login -u rajasekhar11022 -p ${dockerHubPwd}"
 
-                    sh "docker push rajasekhar11022/helloimage:${DOCKER_TAG}"
+                    sh "docker pull rajasekhar11022/helloimage:34505bec364b7c7cba92221a73e9c8a431bf4262"
                 }
             }
         }
